@@ -7,4 +7,71 @@
     <groupId>com.wdb</groupId>
     <artifactId>study</artifactId>
     <version>1.0.1-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <java.version>1.8</java.version>
+        <spring-tx.version>4.3.9.RELEASE</spring-tx.version>
+        <!-- mybatis -->
+        <druid.version>1.1.9</druid.version>
+        <mysql-connector.version>5.1.38</mysql-connector.version>
+        <mybatisplus-spring-boot-starter.version>1.0.4</mybatisplus-spring-boot-starter.version>
+        <mybatis-plus.version>2.1.9</mybatis-plus.version>
+        <!-- json -->
+        <fastjson.version>1.2.4</fastjson.version>
+        <!-- zipkin log bff adaptation -->
+        <logback.version>1.2.3</logback.version>
+    </properties>
+
+    <parent>
+        <!-- springboot -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath />
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- springcloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <!-- maven私服 -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots</name>
+            <url>http://maven.qizhidao.net:8081/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>Public Repositories</name>
+            <url>http://maven.qizhidao.net:8081/repository/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>

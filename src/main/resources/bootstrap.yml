@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: study
+  http:
+    encoding:
+      force: true
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    registryFetchIntervalSeconds: 15
+    serviceUrl:
+      defaultZone: http://172.16.7.112:8761/eureka/
+
+  instance:
+    instance-id: http://172.16.7.112:study:8761
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 11
